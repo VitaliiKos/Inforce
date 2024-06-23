@@ -7,6 +7,10 @@ from utils.time_stamp import TimeStampedModel
 Employee = get_user_model()
 
 
+def get_current_date():
+    return timezone.now().date()
+
+
 class Restaurant(TimeStampedModel):
     """Model representing a restaurant."""
 
@@ -30,7 +34,7 @@ class Menu(models.Model):
         db_table = 'restaurant_menu'
         ordering = ('id',)
 
-    date = models.DateField(default=timezone.now)
+    date = models.DateField(default=get_current_date)
     dish = models.TextField()
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
 

@@ -18,6 +18,7 @@ class MenuSerializer(serializers.ModelSerializer):
     class Meta:
         model = Menu
         fields = ('id', 'date', 'dish', 'restaurant')
+        read_only_fields = ('date',)
 
 
 class VoteSerializer(serializers.ModelSerializer):
