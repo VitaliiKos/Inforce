@@ -17,7 +17,7 @@ A REST api written in DRF for people with deadlines
     ```
 * Then, Git clone this repo to your PC
     ```
-        git clone https://github.com/VitaliiKos/Inforce.git
+        git clone https://github.com/VitaliiKos/Inforce/tree/develop
     ```
 
 * #### Dependencies
