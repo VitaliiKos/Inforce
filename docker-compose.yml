@@ -1,0 +1,36 @@
+version: '3.7'
+services:
+  web:
+    container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    networks:
+      - inforce
+    volumes:
+      - .:/drf_app
+    restart: on-failure
+
+  postgres:
+    container_name: postgres
+    image: "postgres:15-alpine"
+    env_file:
+      - .env
+    networks:
+      - inforce
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
+networks:
+  inforce:
+    name: inforce

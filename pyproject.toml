@@ -1,0 +1,15 @@
+[tool.ruff]
+line-length = 120  # defaults to 88 like black
+target-version = "py39"  # the python version to target, useful when considering code upgrades, defaults to "py310"
+lint.ignore = ["D104","D106", "D100","F403", ]
+
+lint.select = [
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "UP",  # pyupgrade,
+  "I",   # isort
+  "B",
+]
+exclude = [".venv", "migrations", "__init__", "start.sh", "settings.py", "apps.py", "manage.py"]
+
+[tool.ruff.lint.isort]
