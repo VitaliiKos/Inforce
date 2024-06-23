@@ -2,7 +2,9 @@ import pytest
 from django.urls import reverse
 from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import RefreshToken
+
 from apps.employee.models import Employee
+
 from .factories import EmployeeFactory
 
 
