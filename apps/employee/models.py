@@ -14,6 +14,7 @@ class Employee(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
     is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
 

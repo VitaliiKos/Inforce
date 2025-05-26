@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 from rest_framework.generics import ListAPIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 from apps.employee.models import Employee
 
@@ -12,7 +12,7 @@ EmployeeModel: Employee = get_user_model()
 class EmployeeListView(ListAPIView):
     """List of employees"""
     serializer_class = EmployeeSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, AllowAny)
 
     def get_queryset(self):
         queryset = EmployeeModel.objects.exclude(pk=self.request.user.pk)

@@ -13,6 +13,7 @@ class EmployeeFactory(factory.django.DjangoModelFactory):
     password = factory.PostGenerationMethodCall('set_password', 'password123')
     first_name = 'Test'
     last_name = 'User'
+    is_active = True
     is_staff = False
 
     @factory.post_generation
