@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # apps
     'apps.auth',
     'apps.employee',
+    'apps.dishes',
     'apps.restaurant',
     'apps.health_check'
 ]
