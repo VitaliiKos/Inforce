@@ -15,7 +15,7 @@ class Dish(TimeStampedModel):
 
     class Meta:
         db_table = 'dish'
-        ordering = ('id',)
+        ordering = ('category',)
 
     name = models.CharField(max_length=255)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)

@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import RestaurantCreateView, RestaurantRetrieveUpdateDestroyView
+from .views import RestaurantCreateView, RestaurantActionsView
 
 urlpatterns = [
     path('', RestaurantCreateView.as_view(), name='restaurant_create'),
-    path('<int:pk>', RestaurantRetrieveUpdateDestroyView.as_view(), name='restaurant-detail'),
+    path('<int:pk>', RestaurantActionsView.as_view(), name='restaurant-actions'),
 ]

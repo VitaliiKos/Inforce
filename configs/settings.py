@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'apps.auth',
     'apps.employee',
     'apps.dishes',
+    'apps.menu',
     'apps.restaurant',
     'apps.health_check'
 ]

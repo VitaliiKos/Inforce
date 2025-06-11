@@ -15,7 +15,7 @@ class RestaurantCreateView(ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
-class RestaurantRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
+class RestaurantActionsView(RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
     permission_classes = (IsAuthenticated, IsRestaurantOwner)
