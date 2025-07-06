@@ -12,7 +12,7 @@ class DailyMenu(TimeStampedModel):
     class Meta:
         db_table = 'menu'
         ordering = ('-date',)
-        unique_together = ('restaurant', 'date')
+        unique_together = ('date',)
 
     dishes = models.ManyToManyField(Dish, related_name='menus')
     date = models.DateField(default=date.today)
