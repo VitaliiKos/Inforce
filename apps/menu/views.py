@@ -1,4 +1,4 @@
-from rest_framework.generics import CreateAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import CreateAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView, get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 
 
@@ -20,7 +20,7 @@ class TodayMenuView(RetrieveAPIView):
 
     def get_object(self):
         today = now().date()
-        return DailyMenu.objects.get(date=today)
+        return get_object_or_404(DailyMenu, date=today)
 
 class DailyMenuActionsView(RetrieveUpdateDestroyAPIView):
     queryset = DailyMenu.objects.all()

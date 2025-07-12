@@ -5,8 +5,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from apps.auth.serializers import GoogleOAuthSerializer
 from apps.employee.models import Employee
-from apps.employee.serializers import EmployeeSerializer, GoogleOAuthSerializer
+from apps.employee.serializers import EmployeeSerializer
 from utils.services.jwt_service import JWTService, ActivateToken
 
 UserModel: Employee = get_user_model()

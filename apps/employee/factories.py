@@ -10,9 +10,7 @@ class EmployeeFactory(factory.django.DjangoModelFactory):
         skip_postgeneration_save = True
 
     email = factory.Sequence(lambda n: f'user{n}@example.com')
-    password = factory.PostGenerationMethodCall('set_password', 'password123')
-    first_name = 'Test'
-    last_name = 'User'
+    password = factory.PostGenerationMethodCall('set_password', 'P@ssword123')
     is_active = True
     is_staff = False
 

@@ -9,4 +9,4 @@ class RestaurantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = ('id', 'name', 'owner')
+        fields = ('id', 'name', 'owner', 'created_at', 'updated_at')
